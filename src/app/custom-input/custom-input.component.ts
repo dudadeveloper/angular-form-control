@@ -60,25 +60,16 @@ export class CustomInputComponent implements OnInit, ControlValueAccessor, Valid
   }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    if (this.required == true && !this.value) {
+    if (this.required == true && !control.value) {
         return {
           invalid: true
         }
     }
     return;
   }
+
   registerOnValidatorChange?(fn: () => void): void {
     this.onValidatorChange = fn;
   }
-
-  /* Validator */
-  // validate({ value }: FormControl) {
-  //   if (this.required == true && !this.value) {
-  //     return {
-  //       invalid: true
-  //     }
-  //   }
-  //   return;
-  // }
 
 }

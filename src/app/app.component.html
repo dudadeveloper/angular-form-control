@@ -2,7 +2,8 @@
 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-  <custom-input name="meuComponent" [(ngModel)]="valor" #meuComponent="ngModel" required="false"></custom-input>
+  <custom-input name="meuComponent" 
+    [(ngModel)]="valor" #meuComponent="ngModel" [required]="true"></custom-input>
 
   <div [hidden]="meuComponent.valid || meuComponent.pristine">
     Campo Obrigatório
